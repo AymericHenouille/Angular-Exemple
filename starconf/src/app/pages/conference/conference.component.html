@@ -1,0 +1,28 @@
+<app-header>
+  <span left class="icon" (click)="goHome.emit()">
+    <i class="fas fa-home"></i>
+  </span>
+</app-header>
+
+<div class="content">
+  <div class="desc">
+    <figure class="image">
+      <img [src]="conference.coverUrl" alt="Placeholder image" />
+    </figure>
+    <p class="subtitle is-5">{{ conference.description }}</p>
+  </div>
+
+  <div class="info">
+    <h1 class="title is-1">{{ conference.name }}</h1>
+    <p class="subtitle is-6">Reference: {{ conference.name | reference }}</p>
+    <section>
+      <icon svg="assets/svg/calendar-16-svgrepo-com.svg"></icon>
+      <p class="subtitle is-3">{{ conference.date | date : "medium" }}</p>
+    </section>
+    <section>
+      <icon svg="assets/svg/position-svgrepo-com.svg"></icon>
+      <p class="subtitle is-5">{{ conference.location }}</p>
+    </section>
+    <p class="subtitle is-6">{{ conference.price | currency }}</p>
+  </div>
+</div>

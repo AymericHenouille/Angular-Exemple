@@ -1,0 +1,21 @@
+<app-conference *ngIf="selectedConference; else noConference" [conference]="selectedConference" (goHome)="goHome()"></app-conference>
+
+<ng-template #noConference>
+  <app-header>
+    <span right class="icon" (click)="toggleColorPicker()">
+      <i class="fas fa-palette"></i>
+      <input #colorPicker type="color" [(ngModel)]="nameColor" />
+    </span>
+  </app-header>
+
+  <app-conference-list
+    *ngIf="conferences.length > 0; else noConferenceInList"
+    [conferences]="conferences"
+    [nameColor]="nameColor"
+    (selectConference)="selectConference($event)"
+  ></app-conference-list>
+</ng-template>
+
+<ng-template #noConferenceInList>
+  <h1 class="title is-1">There is no conference.</h1>
+</ng-template>
