@@ -1,0 +1,8 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <a class="navbar-item" [routerLink]="['/pages', 'home', 'first']" routerLinkActive="active has-text-link"> First </a>
+  <a class="navbar-item" [routerLink]="['/pages', 'home', 'second']" routerLinkActive="active has-text-link"> Second </a>
+  <a class="navbar-item" [routerLink]="['/pages', 'home', 'third']" routerLinkActive="active has-text-link"> Third </a>
+</nav>
+<div [@routerTransition]="getRouteAnimationData()">
+  <router-outlet></router-outlet>
+</div>
